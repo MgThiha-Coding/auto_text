@@ -9,7 +9,11 @@ class AutoText extends StatelessWidget {
   final FontStyle? fontStyle;
   final String? fontFamily;
   final TextAlign? textAlign;
-  final double? padding;
+  final EdgeInsetsGeometry? padding;
+  final TextOverflow? overFlow;
+  final int? maxLines;
+  final bool? softWrap;
+  final double? lineHeight;
 
   const AutoText({
     super.key,
@@ -22,30 +26,35 @@ class AutoText extends StatelessWidget {
     this.fontFamily,
     this.textAlign,
     this.padding,
+    this.overFlow,
+    this.maxLines,
+    this.softWrap,
+    this.lineHeight,
   });
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
 
-    // Font size: Uses user-defined size or scales based on screen width
-    double fontSize = baseFontSize ?? (screenWidth * 0.05).clamp(12.0, 24.0);
-
-    // Padding: Uses user-defined padding or defaults to dynamic scaling
-    double appliedPadding = padding ?? screenWidth * 0.02;
+    // Adaptive font size based on both width and height
+    double fontSize = baseFontSize ?? (screenWidth * 0.045).clamp(12.0, 26.0);
 
     return Padding(
-      padding: EdgeInsets.all(appliedPadding),
+      padding: padding ?? EdgeInsets.all(screenWidth * 0.02),
       child: Text(
         text,
-        textAlign: textAlign ?? TextAlign.start, // Default alignment
+        textAlign: textAlign ?? TextAlign.start,
+        maxLines: maxLines,
+        softWrap: softWrap,
         style: TextStyle(
+          overflow: overFlow ?? TextOverflow.ellipsis,
           fontSize: fontSize,
           letterSpacing: spacing,
           fontWeight: weight,
           fontStyle: fontStyle,
           fontFamily: fontFamily,
-          color: color ?? Colors.black, // Default color
+          color: color ?? Colors.black,
+          height: lineHeight, // Line height support
         ),
       ),
     );

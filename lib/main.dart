@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
               color: Colors.blueAccent,
               fontStyle: FontStyle.italic,
               weight: FontWeight.bold,
+              overFlow: TextOverflow.ellipsis,
             ),
           ),
         ),
