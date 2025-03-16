@@ -1,17 +1,19 @@
-# AutoText - Flutter Package
+# AutoText - Flutter Package 🚀  
 
-**AutoText** is a Flutter package that automatically scales text size based on the screen width. It makes it easy to create responsive text elements that adjust to different screen sizes, ensuring a consistent and accessible user experience across devices.
+**AutoText** is a Flutter package that automatically scales text size based on the screen width and height. It helps create responsive text elements that adjust dynamically to different screen sizes, ensuring a consistent and accessible user experience across devices.  
 
-## Features
+## ✨ Features  
 
-- **Responsive text**: Text scales automatically based on the screen width.
-- **Customizable**: Customize font size, weight, style, and spacing.
-- **Easy to use**: Simple widget integration in any Flutter project.
+- **Responsive text**: Text scales automatically based on screen width & height.  
+- **Highly customizable**: Supports font size, weight, style, spacing, line height, and more.  
+- **Flexible padding**: Use custom `EdgeInsets` for better layout control.  
+- **Overflow handling**: Supports `maxLines`, `softWrap`, and `TextOverflow`.  
+- **Easy integration**: Simple widget that works in any Flutter project.  
 
-## Installation
+## 📥 Installation  
 
-To use the `AutoText` package, add it as a dependency in your `pubspec.yaml` file:
+To use the `AutoText` package, add it as a dependency in your `pubspec.yaml` file:  
 
 ```yaml
 dependencies:
-  autotext: ^1.0.0
+  autotext: ^1.1.0

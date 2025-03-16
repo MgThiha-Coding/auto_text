@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, // Removes debug banner
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
           // Prevents UI issues with notches
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
               text: 'Welcome to AutoText!',
               baseFontSize:
                   20, // This can still scale dynamically inside AutoText
-              spacing: 5,
+              spacing: 3,
               color: Colors.blueAccent,
               fontStyle: FontStyle.italic,
               weight: FontWeight.bold,
